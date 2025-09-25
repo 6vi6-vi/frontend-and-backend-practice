@@ -204,11 +204,50 @@ body
     margin: 0; /* Убираем отступы */
 }
 
+.news-section
+{
+    margin-top: 50px;
+}
+
+.news-card
+{
+    background: #fff7ff; /* Белый фон карточки */
+    padding: 25px; /* Внутренние отступы */
+    margin: 20px 0; /* Вертикальные отступы */
+    border-radius: 12px; /* Скругленные углы */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */
+    border-left: 4px solid #784386; /* Синяя полоса слева */
+}
+
+.news-title
+{
+    font-size: 27px; /* Размер шрифта заголовка опыта */
+    color: #1d072c; /* Темно-синий цвет текста */
+    margin: 0 0 7px 0; /* Отступ снизу */
+    font-weight: 700; /* Жирный шрифт */
+}
+
+.news-date-author
+{
+    font-size: 14px; /* Размер шрифта группы */
+    color: #8a7f8d; /* Серый цвет текста */
+    margin: 0 0 10px 0; /* Вертикальные отступы */
+    font-weight: 400;
+}
+
+.news-desc
+{
+    color: #270534; /* Серый цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+    margin: 15px 0 0 0; /* Убираем отступы */
+}
+
 /* ===== ФУТЕР ===== */
 .footer 
 {
     background: linear-gradient(90deg, #341749 0%, #3b1a53 50%, #341749 100%); /* Темный градиентный фон */
     color: white; /* Белый цвет текста */
+    font-size: 22px;
     font-weight: 400;
     text-align: center; /* Выравнивание по центру */
     padding: 30px; /* Внутренние отступы */
