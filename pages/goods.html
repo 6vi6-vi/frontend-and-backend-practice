@@ -7,33 +7,38 @@
         <link rel="stylesheet" href="../style/styles.css">
     </head>
     <body>
-        <div id="header">Хэдер</div>
-        <div id="menu">
-            <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="practices.html">Практики</a></li> 
-                <li><a href="goods.html">Товары</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </div>
-        <div id="content">
-            <div>
-                <img src="../images/goods1.png" alt = "Товар 1" width="220" height="216">
-                <p>Ролики для попугая</p>
-                <p>435 руб.</p>
+        <div class="page-container">
+            <div class="header">Хэдер</div>
+            <div class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
             </div>
-            <div>
-                <img src="../images/goods2.png" alt = "Товар 2" width="220" height="217">
-                <p>Скутер для хомяка</p>
-                <p>955 руб.</p>
+            <div class="content">
+                <h1 class="goods-title">Наши товары</h1>
+                <div class="goods-container">
+                    <div class="goods-card">
+                        <img class="goods-photo" src="../images/goods1.png" alt = "Товар 1">
+                        <p class="goods-name">Ролики для попугая</p>
+                        <p class="goods-price">435 руб.</p>
+                    </div>
+                    <div class="goods-card">
+                        <img class="goods-photo" src="../images/goods2.png" alt = "Товар 2">
+                        <p class="goods-name">Скутер для хомяка</p>
+                        <p class="goods-price">955 руб.</p>
+                    </div>
+                    <div class="goods-card">
+                        <img class="goods-photo" src="../images/goods3.png" alt = "Товар 3">
+                        <p class="goods-name">Колготки для собаки</p>
+                        <p class="goods-price">370 руб.</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <img src="../images/goods3.png" alt = "Товар 3" width="220" height="221">
-                <p>Колготки для собаки</p>
-                <p>370 руб.</p>
-            </div>
-        </div>
-        <div id="footer">Футер</div>    
+            <div class="footer">Футер</div>   
+        </div>   
     </body>
 </html>
