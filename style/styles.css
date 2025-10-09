@@ -13,9 +13,16 @@ body
 {
     max-width: 1200px; /* Максимальная ширина контента */
     margin: 0 auto; /* Центрирование контейнера по горизонтали */
-    background: rgb(240, 229, 240); /* Белый фон для основного содержимого */
+    background: rgb(240, 229, 240); /* Фон для основного содержимого */
     min-height: 100vh; /* Минимальная высота равна высоте окна браузера */
     box-shadow: 0 0 30px rgba(45, 5, 42, 0.1); /* Легкая тень вокруг всего контента */
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
 }
 
 /* ===== ШАПКА ===== */
@@ -24,17 +31,19 @@ body
     background: linear-gradient(90deg, #341749 0%, #3b1a53 50%, #341749 100%); /* Темный градиентный фон */
     color: rgb(255, 255, 255); /* Белый цвет текста */
     text-align: center; /* Выравнивание текста по центру */
-    padding: 30px; /* Внутренние отступы со всех сторон */
-    font-size: 28px; /* Размер шрифта */
+    padding: 27px; /* Внутренние отступы со всех сторон */
+    font-size: 26px; /* Размер шрифта */
     font-weight: 400; /* Легкое начертание шрифта */
     letter-spacing: 2px; /* Расстояние между буквами */
+    grid-area: header; /* Привязка к области сетки */
 }
 
 /* ===== НАВИГАЦИЯ ===== */
 .nav 
 {
-    background: #4f246d; /* Темно-синий фон навигации */
+    background: #4f246d; /* Фон навигации */
     padding: 20px 0; /* Вертикальные отступы */
+    grid-area: nav; /* Привязка к области сетки */
 }
 
 .nav-list 
@@ -69,11 +78,12 @@ body
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
-.content 
+main.content 
 {
     padding: 40px; /* Внутренние отступы контента */
     max-width: 900px; /* Максимальная ширина контента */
     margin: 0 auto; /* Центрирование контента */
+    grid-area: main; /* Привязка к области сетки */
 }
 
 /* ===== ГЛАВНАЯ СТРАНИЦА ===== */
@@ -86,9 +96,9 @@ body
 .profile-title 
 {
     font-size: 32px; /* Размер шрифта заголовка */
-    color: #1d072c; /* Темно-синий цвет текста */
-    margin-bottom: 10px; /* Отступ снизу */
-    font-weight: 700; /* Легкое начертание шрифта */
+    color: #1d072c; /* Темно-фиолетовый цвет текста */
+    margin: 10px 0; /* Отступ снизу */
+    font-weight: 700; /* Начертание шрифта */
 }
 
 .profile-photo 
@@ -98,14 +108,14 @@ body
     border-radius: 15px; /* Скругленные углы фото */
     object-fit: cover; /* Обрезка фото для сохранения пропорций */
     margin: 20px auto; /* Центрирование и отступы */
-    border: 4px solid #784386; /* Синяя рамка вокруг фото */
-    box-shadow: 0 8px 25px rgba(186, 102, 234, 0.3); /* Тень с синим оттенком */
+    border: 4px solid #784386; /* Рамка вокруг фото */
+    box-shadow: 0 8px 25px rgba(186, 102, 234, 0.3); /* Тень с фиолетовым оттенком */
 }
 
 .profile-name 
 {
     font-size: 24px; /* Размер шрифта имени */
-    color: #1d072c; /* Темно-синий цвет текста */
+    color: #1d072c; /* Темно-фиолетовый цвет текста */
     margin: 10px 0; /* Вертикальные отступы */
     font-weight: 500; /* Средняя жирность шрифта */
 }
@@ -119,25 +129,32 @@ body
 
 .about-me 
 {
-    background: #e5d6ec 100%; /* Светлый градиентный фон */
-    padding: 20px; /* Внутренние отступы */
+    background: #e5d6ec 100%; /* Светлый фон */
+    padding: 10px 25px 15px 25px; /* Внутренние отступы */
     border-radius: 15px; /* Скругленные углы */
     margin: 30px 0; /* Вертикальные отступы */
-    border-left: 5px solid #784386; /* Синяя полоса слева */
+    border-left: 5px solid #784386; /* Фиолетовая полоса слева */
     color: #270534;
-    font-size: 20px; /* Размер шрифта текста */
+    font-size: 17px; /* Размер шрифта текста */
     font-weight: 500;
-    line-height: 1.8; /* Межстрочный интервал */
+    line-height: 1.4; /* Межстрочный интервал */
+    text-align: justify;
 }
 
 /* ===== НАВЫКИ ===== */
-.skills-container 
+.skills-container h2
 {
-    display: flex; /* Горизонтальное расположение навыков */
-    justify-content: center; /* Выравнивание по центру */
-    flex-wrap: wrap; /* Перенос на новую строку при необходимости */
+    color: #1d072c;
+    text-align: center;
+    font-size: 28px;
+}
+
+.skills-grid
+{
+    display: grid; /* Горизонтальное расположение навыков */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px; /* Расстояние между навыками */
-    margin: 30px 0; /* Вертикальные отступы */
+    margin: 20px 0; /* Вертикальные отступы */
 }
 
 .skill-tag 
@@ -148,8 +165,9 @@ body
     border-radius: 25px; /* Круглые углы (капсульная форма) */
     font-weight: 600; /* Жирный шрифт */
     font-size: 14px; /* Размер шрифта */
-    box-shadow: 0 4px 15px rgba(53, 27, 90, 0.3); /* Тень с голубым оттенком */
+    box-shadow: 0 4px 15px rgba(53, 27, 90, 0.3); /* Тень с фиолетовым оттенком */
     transition: all 0.3s ease; /* Плавные анимации при изменении */
+    text-align: center;
 }
 
 .skill-tag:hover 
@@ -173,14 +191,20 @@ body
     font-weight: 700; /* Легкое начертание шрифта */
 }
 
+.experience-grid
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
 .experience-card 
 {
-    background: #fff7ff; /* Белый фон карточки */
+    background: #fff7ff; /* Фон карточки */
     padding: 25px; /* Внутренние отступы */
-    margin: 20px 0; /* Вертикальные отступы */
     border-radius: 12px; /* Скругленные углы */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */
-    border-left: 4px solid #784386; /* Синяя полоса слева */
+    box-shadow: 0 5px 20px rgba(53, 27, 90, 0.08); /* Легкая тень */
+    border-left: 5px solid #784386; /* Синяя полоса слева */
     transition: transform 0.3s ease; /* Плавная анимация трансформации */
 }
 
@@ -192,7 +216,7 @@ body
 .experience-title 
 {
     font-size: 20px; /* Размер шрифта заголовка опыта */
-    color: #1d072c; /* Темно-синий цвет текста */
+    color: #1d072c; /* Темно-фиолетовый цвет текста */
     margin: 0 0 10px 0; /* Отступ снизу */
     font-weight: 600; /* Жирный шрифт */
 }
@@ -204,164 +228,249 @@ body
     margin: 0; /* Убираем отступы */
 }
 
-.news-section
+/* ===== НОВОСТИ ===== */
+.news-container
 {
-    margin-top: 50px;
+    display: grid;
+    gap: 25px;
+}
+
+.news-section-title 
+{
+    text-align: center;
+    font-size: 32px; 
+    color: #1d072c;
+    margin: 10px; 
+    font-weight: 700; 
 }
 
 .news-card
 {
-    background: #fff7ff; /* Белый фон карточки */
-    padding: 25px; /* Внутренние отступы */
-    margin: 20px 0; /* Вертикальные отступы */
-    border-radius: 12px; /* Скругленные углы */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */
-    border-left: 4px solid #784386; /* Синяя полоса слева */
+    background: #fff7ff;
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 5px 20px rgba(53, 27, 90, 0.08); 
+    border-left: 5px solid #784386;
+    text-align: justify;
 }
 
 .news-title
 {
-    font-size: 27px; /* Размер шрифта заголовка опыта */
-    color: #1d072c; /* Темно-синий цвет текста */
-    margin: 0 0 7px 0; /* Отступ снизу */
-    font-weight: 700; /* Жирный шрифт */
+    font-size: 23px; 
+    color: #1d072c; 
+    margin: 0 0 10px 0; 
+    font-weight: 700; 
 }
 
-.news-date-author
+.news-meta
 {
-    font-size: 14px; /* Размер шрифта группы */
-    color: #8a7f8d; /* Серый цвет текста */
-    margin: 0 0 10px 0; /* Вертикальные отступы */
+    color: #8a7f8d;
+    font-size: 14px; 
     font-weight: 400;
+    margin: 0 0 20px 0;
 }
 
-.news-desc
+.line
 {
-    color: #270534; /* Серый цвет текста */
-    line-height: 1.6; /* Межстрочный интервал */
-    margin: 15px 0 0 0; /* Убираем отступы */
+    margin: 15px 0;
+	padding: 0;
+	height: 0;
+	border: none;
+	border-top: 2px dotted #d6c0ddc6;
 }
 
-.goods-title
+.news-text
 {
-    text-align: center; /* Выравнивание по центру */
-    margin-bottom: 10px; /* Отступ снизу */
-    font-size: 32px; /* Размер шрифта заголовка */
-    color: #1d072c; /* Темно-синий цвет текста */
+    color: #270534; 
+    line-height: 1.7;
+    margin: 0; 
+}
+
+/* ===== ТОВАРЫ ===== */
+.products-grid
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.products-title
+{
+    text-align: center;
+    margin: 10px 0; 
+    font-size: 32px; 
+    color: #1d072c; 
     font-weight: 700;
 }
 
-.goods-container
+.product-card
 {
-    display: flex; /* Горизонтальное расположение товаров */
-    justify-content: center; /* Выравнивание по центру */
-    gap: 20px; /* Расстояние между товарами */
-    margin: 20px 0 0; /* Вертикальные отступы */
-}
-
-.goods-card
-{
-    background: #fff7ff; /* Фон карточки */
-    padding: 25px; /* Внутренние отступы */
-    margin: 20px 0 0; /* Вертикальные отступы */
-    border-radius: 12px; /* Скругленные углы */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */
-    transition: transform 0.3s ease; /* Плавная анимация трансформации */
+    background: #fff7ff; 
+    padding: 25px; 
+    border-radius: 15px;
     text-align: center;
+    box-shadow: 0 5px 20px rgba(53, 27, 90, 0.08); 
+    transition: transform 0.3s ease; 
+    max-width: 280px; 
+    margin: 0 auto;
 }
 
-.goods-card:hover 
+.product-card:hover 
 {
     transform: translateY(-5px); 
 }
 
-.goods-photo
+.product-image
 {
-    width: 240px; /* Фиксированная ширина фото */
-    height: 235px; /* Фиксированная высота фото */
-    border-radius: 12px; /* Скругленные углы фото */
-    object-fit: cover; /* Обрезка фото для сохранения пропорций */
-    margin: auto; /* Центрирование и отступы */
+    width: 240px; 
+    height: 235px;
+    border-radius: 12px; 
+    object-fit: cover; 
+    margin-bottom: 5px;
+    border: 3px solid #f8f9fa;
 }
 
-.goods-name
+.product-name
 {
-    font-size: 20px; /* Размер шрифта заголовка опыта */
-    color: #270534; /* Темно-синий цвет текста */
-    margin: 10px 0 10px 0; /* Отступ снизу */
-    font-weight: 600; /* Жирный шрифт */
+    font-size: 20px;
+    color: #270534; 
+    margin: 5px 0;
+    font-weight: 600; 
 }
 
-.goods-price
+.product-description
 {
-    font-size: 20px; /* Размер шрифта заголовка опыта */
-    color: #b645c5; /* Темно-синий цвет текста */
-    margin: 10px 0 10px 0; /* Отступ снизу */
-    font-weight: 600; /* Жирный шрифт */
+    font-size: 15px;
+    color: #8a7f8d; 
+    margin: 10px 0;
+}
+
+.product-price
+{
+    font-size: 20px; 
+    color: #b645c5; 
+    font-weight: 700; 
+    margin: 5px 0; 
+}
+
+.product-button
+{
+    background: linear-gradient(135deg, #2f093c 0%, #4a0d62 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px; 
+    font-size: 16px;
+    border-radius: 30px; 
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600; 
+    box-shadow: 0 4px 15px rgba(53, 27, 90, 0.3); 
+    transition: all 0.3s ease; 
+}
+
+.product-button:hover 
+{
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 20px rgba(53, 27, 90, 0.4);
+}
+
+/* ===== КОНТАКТЫ ===== */
+.contacts-container
+{
+    text-align: center;
 }
 
 .contacts-title
 {
-    text-align: center; /* Выравнивание по центру */
-    margin-bottom: 10px; /* Отступ снизу */
-    font-size: 32px; /* Размер шрифта заголовка */
-    color: #1d072c; /* Темно-синий цвет текста */
+    text-align: center; 
+    margin: 10px;
+    font-size: 32px; 
+    color: #1d072c; 
     font-weight: 700;
 }
 
-.contacts-email
+.contacts-card
 {
-    background: #e5d6ec; /* Светлый градиентный фон */
-    padding: 40px; /* Внутренние отступы */
-    border-radius: 15px; /* Скругленные углы */
-    margin: 30px 0; /* Вертикальные отступы */
+    background: #e5d6ec; 
+    padding: 30px 50px;
+    border-radius: 15px;
+    margin: 30px 0 10px 0;  
+}
+
+.contacts-info-title
+{
+    font-size: 20px; 
+    color: #1d072c; 
+    margin: 0 0 10px 0; 
+    font-weight: 700; 
+}
+
+.contacts-info
+{
+    font-size: 18px;
     color: #270534;
-    font-size: 18px; /* Размер шрифта текста */
-    font-weight: 400;
-    text-align: center; /* Выравнивание по центру */
+    margin: 0;
 }
 
-.contacts-address
+.contacts-button
 {
-    background: #e5d6ec; /* Светлый градиентный фон */
-    padding: 40px; /* Внутренние отступы */
-    border-radius: 15px; /* Скругленные углы */
-    margin: 30px 0; /* Вертикальные отступы */
-    color: #270534;
-    font-size: 18px; /* Размер шрифта текста */
-    font-weight: 400;
-    text-align: center; /* Выравнивание по центру */
+    background: linear-gradient(135deg, #2f093c 0%, #4a0d62 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px; 
+    font-size: 16px;
+    border-radius: 30px; 
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 600; 
+    box-shadow: 0 4px 15px rgba(53, 27, 90, 0.3); 
+    transition: all 0.3s ease; 
 }
 
-.contacts-button-call-me
+.contacts-button:hover 
 {
-    background: linear-gradient(135deg, #2f093c 0%, #4a0d62 100%); /* Градиентный фон */
-    color: white; /* Белый цвет текста */
-    padding: 12px 25px; /* Внутренние отступы */
-    border-radius: 25px; /* Круглые углы (капсульная форма) */
-    font-weight: 600; /* Жирный шрифт */
-    font-size: 14px; /* Размер шрифта */
-    text-align: center;
-    display: block; 
-    margin: 0 auto; 
-    box-shadow: 0 4px 15px rgba(53, 27, 90, 0.3); /* Тень с голубым оттенком */
-    transition: all 0.3s ease; /* Плавные анимации при изменении */
-}
-
-.contacts-button-call-me:hover 
-{
-    transform: translateY(-3px); /* Поднятие элемента при наведении */
-    box-shadow: 0 6px 20px rgba(53, 27, 90, 0.4); /* Увеличение тени при наведении */
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 20px rgba(53, 27, 90, 0.4);
 }
 
 /* ===== ФУТЕР ===== */
 .footer 
 {
-    background: linear-gradient(90deg, #341749 0%, #3b1a53 50%, #341749 100%); /* Темный градиентный фон */
-    color: white; /* Белый цвет текста */
-    font-size: 22px;
+    background: linear-gradient(90deg, #341749 0%, #3b1a53 50%, #341749 100%); 
+    color: white; 
+    font-size: 18px;
     font-weight: 400;
-    text-align: center; /* Выравнивание по центру */
-    padding: 30px; /* Внутренние отступы */
-    margin-top: 50px; /* Отступ сверху */
+    text-align: center; 
+    padding: 30px; 
+    margin-top: 50px;
+    grid-area: footer;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px)
+{
+    .nav-list
+    {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .skills-grid
+    {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-grid
+    {
+        grid-template-columns: 1fr;
+    }
+    .products-grid
+    {
+        grid-template-columns: 1fr;
+    }
+    main.content
+    {
+        padding: 20px;
+    }
 }

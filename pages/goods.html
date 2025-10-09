@@ -8,8 +8,11 @@
     </head>
     <body>
         <div class="page-container">
-            <div class="header">Хэдер</div>
-            <div class="nav">
+            <header class="header"> 
+                <h1>Наши товары</h1> 
+            </header>
+
+            <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
                     <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
@@ -17,28 +20,38 @@
                     <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
                 </ul>
-            </div>
-            <div class="content">
-                <h1 class="goods-title">Наши товары</h1>
-                <div class="goods-container">
-                    <div class="goods-card">
-                        <img class="goods-photo" src="../images/goods1.png" alt = "Товар 1">
-                        <p class="goods-name">Ролики для попугая</p>
-                        <p class="goods-price">435 руб.</p>
-                    </div>
-                    <div class="goods-card">
-                        <img class="goods-photo" src="../images/goods2.png" alt = "Товар 2">
-                        <p class="goods-name">Скутер для хомяка</p>
-                        <p class="goods-price">955 руб.</p>
-                    </div>
-                    <div class="goods-card">
-                        <img class="goods-photo" src="../images/goods3.png" alt = "Товар 3">
-                        <p class="goods-name">Колготки для собаки</p>
-                        <p class="goods-price">370 руб.</p>
-                    </div>
+            </nav>
+
+            <main class="content">
+                <h1 class="products-title">Каталог товаров</h1>
+                <div class="products-grid">
+                    <article class="product-card">
+                        <img class="product-image" src="../images/goods1.png" alt = "Товар 1">
+                        <p class="product-name">Ролики для попугая</p>
+                        <p class="product-description">Яркий тренажёр для лап, чтобы занять питомца и поддержать его активность</p>
+                        <p class="product-price">435 ₽</p>
+                        <button class="product-button">В корзину</button>
+                    </article>
+                    <article class="product-card">
+                        <img class="product-image" src="../images/goods2.png" alt = "Товар 2">
+                        <p class="product-name">Скутер для хомяка</p>
+                        <p class="product-description">Весёлое развлечение и физическая нагрузка для вашего грызуна</p>
+                        <p class="product-price">955 ₽</p>
+                        <button class="product-button">В корзину</button>
+                    </article>
+                    <article class="product-card">
+                        <img class="product-image" src="../images/goods3.png" alt = "Товар 3">
+                        <p class="product-name">Колготки для собаки</p>
+                        <p class="product-description">Стильная и практичная одежда для короткошёрстных пород: согреет и защитит лапы в прохладную погоду</p>
+                        <p class="product-price">370 ₽</p>
+                        <button class="product-button">В корзину</button>
+                    </article>
                 </div>
-            </div>
-            <div class="footer">Футер</div>   
+            </main>
+
+            <footer class="footer"> 
+                <p>© 2025 Интернет-магазин. Все права защищены</p> 
+            </footer>    
         </div>   
     </body>
 </html>
