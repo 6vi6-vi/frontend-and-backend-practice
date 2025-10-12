@@ -159,7 +159,7 @@ main.content
 
 .skill-tag 
 {
-    background: linear-gradient(135deg, #2f093c 0%, #4a0d62 100%); /* Градиентный фон */
+    background: linear-gradient(135deg, #451057 0%, #541e6a 100%); /* Градиентный фон */
     color: white; /* Белый цвет текста */
     padding: 12px 25px; /* Внутренние отступы */
     border-radius: 25px; /* Круглые углы (капсульная форма) */
@@ -356,7 +356,7 @@ main.content
 
 .product-button
 {
-    background: linear-gradient(135deg, #2f093c 0%, #4a0d62 100%);
+    background: linear-gradient(135deg, #451057 0%, #541e6a 100%);
     color: white;
     border: none;
     padding: 15px 40px; 
@@ -415,7 +415,7 @@ main.content
 
 .contacts-button
 {
-    background: linear-gradient(135deg, #2f093c 0%, #4a0d62 100%);
+    background: linear-gradient(135deg, #451057 0%, #541e6a 100%);
     color: white;
     border: none;
     padding: 15px 40px; 
